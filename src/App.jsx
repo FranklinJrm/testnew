@@ -21,7 +21,7 @@ function App() {
       const crd = pos.coords;
 
 
-      axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${crd.latitude}&lon=${crd.longitude}&exclude={part}&appid={32040fa982d8f63f1fbf6e99fbdb5656}`)
+      axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&exclude={part}&appid={32040fa982d8f63f1fbf6e99fbdb5656}`)
       .then(resp => setClima(resp.data))
       
     }

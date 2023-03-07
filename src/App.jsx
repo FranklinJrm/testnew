@@ -1,12 +1,13 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import './App.css'
-import Screen from './components/SplashScreen'
+import SplashScreeam from './components/SplashScreen'
 
 
 function App() {
   const [clima, setClima] = useState({})
   const [change, setChange] = useState(true)
+
   const [load, setLoad] = useState(false)
   
   setTimeout(() => {
@@ -19,9 +20,7 @@ function App() {
 
     function success(pos) {
       const crd = pos.coords;
-
-
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&exclude={part}&appid={32040fa982d8f63f1fbf6e99fbdb5656}`)
+      axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=32040fa982d8f63f1fbf6e99fbdb5656`)
       .then(resp => setClima(resp.data))
       
     }
@@ -51,13 +50,11 @@ function App() {
     const img =  climasIcon.filter(icon => icon===`/${clima.weather?.[0].icon}.png`)
       return <img className="image"  src={img} alt="" />
 
-   /* return (<img className="image" src={`http://openweathermap.org/img/wn/${clima.weather?.[0].icon}@2x.png`} alt="" />
-    )*/
   }
   
   return (
     <div className="App">
-      {load && <Screen/>}
+      {load && <SplashScreeam/>}
       <div className='card-clima'>
         <h3 className="title">Wheather App</h3>
         <h4 className="sub-title">{`${clima.sys?.country} - ${clima.name}`}</h4>

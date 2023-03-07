@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SplashScreen = () => {
+const SplashScreeam = () => {
 
     return (
         <div  className='load'>
@@ -11,4 +11,4 @@ const SplashScreen = () => {
     );
 };
 
-export default SplashScreen;
+export default SplashScreeam;

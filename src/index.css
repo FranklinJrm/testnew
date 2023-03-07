@@ -1,0 +1,21 @@
+.load{
+  background: white;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.imag{
+ margin: 0 auto;
+ width: 100px;
+ 
+}
